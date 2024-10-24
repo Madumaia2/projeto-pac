@@ -144,12 +144,14 @@
             </div>
             <div id="purchaseInfo">
                 <div id="finishBody">
-                    <h1>Resumo da Compra</h1>
+                    <h1 id="finishTitle">Resumo da Compra</h1>
                     <div>
                         <h3>Cupom de Desconto</h3>
-                        <div>
-                            <input>
-                            <button>OK</button>
+                        <div id="searchBar">
+                            <input id="searchInput">
+                            <button id="buttonCoupon">
+                                OK
+                            </button>
                         </div>
                     </div>
                     <h3>Subtotal (3 itens)</h3>
@@ -164,14 +166,16 @@
                         </div>
                     </div>
                     <div>
-                        <div>
+                        <div id="valueRow">
                             <h3>Valor Total</h3>
                             <h3>R$ Total</h3>
                         </div>
                         <p>3x de R$ 59,99 sem juros* no cartão da aura.store</p>
                     </div>
-                    <button>Finalizar Compra</button>
-                    <button>CONTINUAR COMPRANDO</button>
+                    <button id="finishPurchase">Finalizar Compra</button>
+                    <a id="keepPurchasing" href="../home.html">
+                        Continuar Comprando
+                    </a>
                 </div>
             </div>
         </section>
