@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- <nav class="navbar navbar-expand-lg navStyle ps-5 pe-5">
+    <nav class="navbar navbar-expand-lg navStyle ps-5 pe-5">
         <img class="iconLogo" src="../icon/icone.png" width="30" height="30" auto >
         <div class="container-fluid">
             <div class="titleAURASTORE">
@@ -44,7 +44,7 @@
                 </li>
             </ul>
         </div>
-    </nav> -->
+    </nav> 
     <main id="cartMain">
         <h5 id="cartTitle">Carrinho de compras</h5>
         <section id="cartInfo">
@@ -54,7 +54,9 @@
                     <div id="searchBar">
                         <input id="searchInput">
                         <button id="searchButton">
-                            <img>
+                            <svg id="btnSvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -67,7 +69,7 @@
                             </div>
                             <div id="prodQuantity">
                                 <p>Quantidade: </p>
-                                <input id="prodQtdInput" type="number">
+                                <input id="prodQtdInput" type="number" value="12">
                             </div>
                         </div>
                         <img id="prodImg" src="https://as2.ftcdn.net/v2/jpg/00/29/45/15/1000_F_29451528_XHdoJm3fP0WTRfjxiHKeb12R47hOsjMF.jpg">

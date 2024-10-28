@@ -7,11 +7,11 @@
     --medium: #A9BCD0;
     --dark: #1B1E27;
     --border: hsla(225, 18%, 13%, 0.2);
+    --primary-color-dark: #445f75;
 }
 
 body {
     height: 100dvh;
-    width: 100dvw;
 }
 
 /* Fazer BreakPoints de tamanho de tela */
@@ -37,7 +37,7 @@ h1 {
 }
 
 .navStyle {
-    background-color: #58A4B0;
+    background-color: var(--primary-color);
 }
 
 .titleAURASTORE {
@@ -70,4 +70,19 @@ h1 {
 #searchButton {
     aspect-ratio: 1/1;
     height: 100%;
+    border: none;
+    padding: none;
+}
+
+#btnSvg {
+    width: 100%;
+    height: 100%;
+}
+
+#searchButton:active {
+    box-shadow: var(--border) 0 30px 60px -12px inset;
+}
+
+#btnSvg:active {
+    margin-top: 0.2dvh;
 }

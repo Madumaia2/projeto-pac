@@ -2,7 +2,6 @@
 /* Tela de carrinho */
 
 #cartMain {
-    width: 100dvw;
     height: 100%;
     flex-direction: column;
     padding: 8dvh 5dvw;
@@ -58,8 +57,11 @@
     padding: 2%;
     width: 100%;
     justify-content: space-between;
-    transition: all ease-in-out 1s;
     height: 25dvh;
+}
+
+#productCard, #buttonCoupon, #finishPurchase{
+    transition: all ease-in-out .1s;
 }
 
 /* animação temporária */
@@ -123,9 +125,15 @@
     margin: 1dvh 2dvw;
 }
 
-#buttonCoupon {
+#buttonCoupon, #finishPurchase {
     background-color: var(--primary-color);
 }
+
+#buttonCoupon:active, #finishPurchase:active {
+    background-color: var(--primary-color-dark);
+    color: var(--light);
+}
+
 
 #finishTitle {
     padding-bottom: 1dvh;
