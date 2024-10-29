@@ -10,30 +10,49 @@
     --primary-color-dark: #445f75;
 }
 
+@media only screen and (max-width: 800px) {
+    h3 {
+        font-size: small !important;
+    }
+    
+    h2 {
+        font-size: medium !important;
+        font-weight: 800 !important;
+    }
+    
+    h1 {
+        font-size: large !important;
+    }
+
+    p {
+        font-size: smaller;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    h3 {
+        font-size: large !important;
+    }
+    
+    h2 {
+        font-size: x-large !important;
+        font-weight: 800 !important;
+    }
+    
+    h1 {
+        font-size: xx-large !important;
+    }
+}
+
 body {
     height: 100dvh;
 }
-
-/* Fazer BreakPoints de tamanho de tela */
 
 h1, h2, h3, p {
     color: var(--dark);
     font-family: "Lexend Deca", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-}
-
-h3 {
-    font-size: large !important;
-}
-
-h2 {
-    font-size: x-large !important;
-    font-weight: 800 !important;
-}
-
-h1 {
-    font-size: xx-large !important;
 }
 
 .navStyle {
