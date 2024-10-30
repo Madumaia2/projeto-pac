@@ -1,0 +1,149 @@
+@import url(./style.css);
+/* Tela de carrinho */
+
+#cartMain {
+    height: 90dvh;
+    flex-direction: column;
+    padding: 8dvh 5dvw;
+}
+
+#cartTitle {
+    font-weight: bold;
+}
+
+#cartInfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3dvw;
+}
+
+#cartProducts, #purchaseInfo, #finishBody {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#finishBody {
+    justify-content: center;
+}
+
+#prodInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+}
+
+#productsBody {
+    display: flex;
+    flex-direction: column;
+    width: 50dvw;
+    height: 100%;
+    overflow-y: scroll;
+    gap: 2dvh;
+    margin-top: 2dvh;
+}
+
+#productCard, #prodImg, #finishBody, #prodQtdInput, #buttonCoupon, #finishPurchase {
+    border: 2px solid var(--border);
+    border-radius: 2dvh;
+}
+
+#productCard {
+    background-color: var(--medium);
+    padding: 2%;
+    width: 100%;
+    justify-content: space-between;
+    height: 25dvh;
+}
+
+#productCard, #buttonCoupon, #finishPurchase{
+    transition: all ease-in-out .1s;
+}
+
+/* animação temporária */
+#productCard svg:active {
+    margin-top: 1dvh;
+    background-color: red;
+}   
+
+#productCard svg:hover {
+    background-color: red;
+}
+
+#productCard, #prodQuantity, #valueRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#prodQuantity {
+    height: fit-content;
+    align-items: center;
+}
+
+#prodQuantity p {
+    margin: 0;
+    margin-right: 1dvw;
+}
+
+#prodQtdInput{
+    background-color: var(--border);
+    height: 100%;
+    width: 100%;
+    text-align: right;
+    border: none;
+    outline: none !important;
+}
+
+#prodImg {
+    height: 100%;
+    object-fit: cover;
+    max-width: 40%;
+    aspect-ratio: 4/3;
+}
+
+#valuesCount {
+    height: auto
+}
+
+#finishBody {
+    background-color: var(--medium);
+    border: 2px solid var(--border);
+    margin-top: 5dvh;
+    height: 100%;
+}
+
+#valueRow {
+    justify-content: space-between;
+}
+
+#finishBody > * {
+    margin: 1dvh 2dvw;
+}
+
+#buttonCoupon, #finishPurchase {
+    background-color: var(--primary-color);
+}
+
+#buttonCoupon:active, #finishPurchase:active {
+    background-color: var(--primary-color-dark);
+    color: var(--light);
+}
+
+
+#finishTitle {
+    padding-bottom: 1dvh;
+    border-bottom: var(--dark) 1px solid;
+}
+
+#keepPurchasing, #finishTitle {
+    text-align: center;
+}
+
+#keepPurchasing {
+    color: var(--dark);
+}

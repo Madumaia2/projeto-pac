@@ -1,7 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+:root {
+    --primary-color: #58A4B0;
+    --secondary-color: #DAA49A;
+    --light: #D8DBE2;
+    --medium: #A9BCD0;
+    --dark: #1B1E27;
+    --border: hsla(225, 18%, 13%, 0.2);
+    --primary-color-dark: #445f75;
+}
+
+@media only screen and (max-width: 800px) {
+    h3 {
+        font-size: small !important;
+    }
+    
+    h2 {
+        font-size: medium !important;
+        font-weight: 800 !important;
+    }
+    
+    h1 {
+        font-size: large !important;
+    }
+
+    p {
+        font-size: smaller;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    h3 {
+        font-size: large !important;
+    }
+    
+    h2 {
+        font-size: x-large !important;
+        font-weight: 800 !important;
+    }
+    
+    h1 {
+        font-size: xx-large !important;
+    }
+}
+
+body {
+    height: 100dvh;
+}
+
+h1, h2, h3, p {
+    color: var(--dark);
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
 .navStyle {
-    background-color: #58A4B0;
+    background-color: var(--primary-color);
 }
 
 .titleAURASTORE {
     margin-left: 1%;
+}
+
+/* Barra de pesquisa */
+
+#searchBody {
+    margin-top: 5dvh;
+    width: 100%;
+    height: 10dvh;
+}
+
+#searchBar {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: 1dvw;
+}
+
+#searchInput {
+    width: 80%;
+    border: 2px solid lightslategray;
+    border-radius: 20dvh;
+    padding: 0.5dvh 1dvw;
+}
+
+#searchButton {
+    aspect-ratio: 1/1;
+    height: 100%;
+    border: none;
+    padding: none;
+}
+
+#btnSvg {
+    width: 100%;
+    height: 100%;
+}
+
+#searchButton:active {
+    box-shadow: var(--border) 0 30px 60px -12px inset;
+}
+
+#btnSvg:active {
+    margin-top: 0.2dvh;
 }
