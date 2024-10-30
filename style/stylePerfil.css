@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+.divPrincipal {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    background-color: white;
+    font-family: "Lexend Deca", sans-serif;
+}
+.divPerson {
+    flex: 1;
+    flex-direction: column; 
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    height: 100vh; 
+    padding: 20px; 
+}
+
+.divHistory {
+    flex: 1;
+    flex-direction: column; 
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    height: 100vh; 
+    padding: 20px; 
+}
+
+.divPerson2 {
+    margin-top: 25px; 
+    margin-left: 100px; 
+}
+.person {
+    display: flex;
+    align-items: center;
+}
+
+.personItens {
+    margin-top: 30px;
+}
+
+.divHistorico {
+    flex: 1; 
+}
+
+.navStyle {
+    background-color: #58A4B0;
+}
+
+.titleAURASTORE {
+    margin-left: 1%;
+}
+
+.profile-container {
+    display: inline-block;
+    border: 2px solid #ddd; 
+    border-radius: 50%;  
+    margin-top: 20px;
+}
+  
+.profile-image {
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+}
+
+.icon-edit {
+    width: 15px; 
+    height: 15px; 
+    margin: 10px;
+    margin-left: 30px;
+}
+
+.deleteCount {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 210px;
+}
+
+.product-name {
+    font-weight: bold;
+    margin-top: 10px;
+    float: inline-start;
+    margin-left: 23px;
+}
+
+.product-name2 {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.product-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    background-color: rgb(56, 155, 155);
+    box-shadow: 0 4px 8px #0000009c;
+    width: 300px;
+    height: 150px;
+  }
+  .product-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+
+  .input-group {
+    max-width: 300px;
+    padding-top: 10px;
+  }
+  
+  .input-group input {
+    border-radius: 20px 0 0 20px;
+  }
+  
+  .input-group button {
+    border-radius: 0 20px 20px 0;
+  }
+
+.titles {
+    margin-left: 40px;
+}
+
+.itensPerson {
+    margin-top: 50px;
+}
+
+.address{
+    margin-top: 30px;
+}
