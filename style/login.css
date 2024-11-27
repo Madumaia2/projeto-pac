@@ -17,9 +17,9 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 2px solid #000000;
-    width: 90%; /* Usando largura relativa para melhorar a responsividade */
-    max-width: 400px; /* Limita a largura máxima para telas grandes */
-    height: auto; /* Ajuste de altura para garantir flexibilidade */
+    width: 90%; 
+    max-width: 400px; 
+    height: auto; 
     text-align: center;
     box-sizing: border-box;
 }
@@ -28,17 +28,17 @@ body {
     background-image: url('icone.png');
     font-size: 22px;
     color: #000000;
-    margin-bottom: 20px; /* Menos espaçamento para dispositivos menores */
+    margin-bottom: 20px; 
 }
 
 .login-box input[type="email"], .login-box input[type="password"] {
     width: 100%;
     background-color: #d8dbe1;
-    padding: 12px; /* Aumentando o padding para melhorar a usabilidade */
+    padding: 12px; 
     margin: 10px 0;
     border: 1px solid #000000;
     border-radius: 100px;
-    font-size: 14px; /* Aumentando o tamanho da fonte para melhorar a legibilidade */
+    font-size: 14px; 
     box-sizing: border-box;
 }
 
@@ -61,7 +61,7 @@ body {
     border: 1px solid #000000;
     margin-top: 18px;
     color: rgb(0, 0, 0);
-    font-size: 14px; /* Aumentando o tamanho da fonte para melhor usabilidade */
+    font-size: 14px;
     cursor: pointer;
 }
 
@@ -80,17 +80,17 @@ hr {
     border-color: #000000;
 }
 
-/* Ajustes para o botão Google e layout de imagem + texto */
+
 .google, .botongoogle {
      margin-left: 20px;
 }
 
 .textgoogle {
-    font-size: 16px; /* Font size ajustado para visibilidade */
+    font-size: 16px; 
     text-align: center;
 }
 
-/* Media Queries para diferentes tamanhos de tela */
+
 @media (max-width: 768px) {
     .login-box {
         width: 85%;
