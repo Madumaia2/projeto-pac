@@ -89,13 +89,20 @@
     height: 25dvh;
 }
 
+#productCard button {
+    height: fit-content;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 1dvi;
+}
+
 /* animação temporária */
-#productCard svg:active {
+#productCard button:active {
     margin-top: 1dvh;
-    background-color: red;
 }   
 
-#productCard svg:hover {
+#productCard button:hover {
     background-color: red;
 }
 
