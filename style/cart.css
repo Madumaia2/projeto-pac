@@ -45,6 +45,9 @@
 .bgMedium {
     background-color: var(--medium);
 }
+.bgLight{
+    background-color: var(--light);
+}
 
 .bgPrimary {
     background-color: var(--primary-color);
@@ -59,6 +62,13 @@
     transition: all ease-in-out .1s;
 }
 
+.mtop5{
+    margin-top: 5%;
+}
+
+.padding10{
+    padding: 10%;
+}
 
 #cartMain {
     height: 90dvh;
@@ -85,8 +95,9 @@
 }
 
 #productCard {
-    padding: 2%;
-    height: 25dvh;
+    padding: 3%;
+    width: 90%;
+    height: 30dvh;
 }
 
 #productCard button {
@@ -123,9 +134,8 @@
 }
 
 #prodImg {
-    object-fit: cover;
     max-width: 40%;
-    aspect-ratio: 4/3;
+    object-fit: fill;
 }
 
 #valuesCount {
@@ -151,4 +161,48 @@
 
 #keepPurchasing {
     color: var(--dark);
+}
+
+#modalResume, #modalFinish {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden{
+    display: none!important;
+}
+
+.visible{
+    display: block!important;
+}
+
+#openModalPurchase{
+    display: none;
+}
+
+/* Quando for mobile */
+@media (max-width : 600px) {
+    #purchaseInfo {
+        display: none;
+    }
+
+    #purchaseInfoModal {
+        height: 100%;
+    }
+
+    #productsBody{
+        width: 90dvw;
+    }
+
+    #openModalPurchase{
+        display: block;
+    }
 }

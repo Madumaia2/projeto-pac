@@ -1,49 +1,50 @@
 let mock_info = [
   {
     code: 1,
-    name: "Short Jeans",
-    price: 12.99,
-    quantity: 10,
+    name: "Bermuda Social Cinza",
+    price: 30.00,
+    quantity: 2,
     urlImg:
-      "https://as2.ftcdn.net/v2/jpg/00/29/45/15/1000_F_29451528_XHdoJm3fP0WTRfjxiHKeb12R47hOsjMF.jpg",
+      "../icon/bermuda.png",
   },
   {
     code: 2,
-    name: "Short Jeans",
-    price: 12.99,
-    quantity: 10,
+    name: "Camisa Rosa",
+    price: 45.99,
+    quantity: 1,
     urlImg:
-      "https://as2.ftcdn.net/v2/jpg/00/29/45/15/1000_F_29451528_XHdoJm3fP0WTRfjxiHKeb12R47hOsjMF.jpg",
+      "../icon/CamisaRosa.png",
   },
   {
     code: 3,
-    name: "Short Jeans",
-    price: 12.99,
-    quantity: 10,
+    name: "Camisa Vermelha",
+    price: 45.99,
+    quantity: 1,
     urlImg:
-      "https://as2.ftcdn.net/v2/jpg/00/29/45/15/1000_F_29451528_XHdoJm3fP0WTRfjxiHKeb12R47hOsjMF.jpg",
+      "../icon/CamisaVermelha.png",
   },
   {
     code: 4,
-    name: "Short Jeans",
+    name: "Chinelo Havaianas",
     price: 12.99,
-    quantity: 10,
+    quantity: 2,
     urlImg:
-      "https://as2.ftcdn.net/v2/jpg/00/29/45/15/1000_F_29451528_XHdoJm3fP0WTRfjxiHKeb12R47hOsjMF.jpg",
+      "../icon/Chinelo.png",
   },
   {
     code: 5,
-    name: "Short Jeans",
-    price: 12.99,
-    quantity: 10,
+    name: "Kit com 3 Calças Jeans",
+    price: 120.00,
+    quantity: 1,
     urlImg:
-      "https://as2.ftcdn.net/v2/jpg/00/29/45/15/1000_F_29451528_XHdoJm3fP0WTRfjxiHKeb12R47hOsjMF.jpg",
+      "../icon/Kit3CalcaJeans.png",
   },
 ];
 
 function onLoad(mock_info) {
   loadCart(mock_info);
   loadResume(mock_info);
+  loadModalResume(mock_info);
 }
 
 function deleteItem(code) {
@@ -51,6 +52,33 @@ function deleteItem(code) {
 
   loadCart(mock_info);
   loadResume(mock_info);
+  loadModalResume(mock_info)
+}
+
+function openModal() {
+  const modal = document.getElementById("modalResume");
+
+  if (modal.classList.contains("hidden")) {
+    modal.classList.add("visible");
+    modal.classList.remove("hidden");
+  } else {
+    modal.classList.add("hidden");
+    modal.classList.remove("visible");
+  }
+
+}
+
+function openModalFinish() {
+  const modal = document.getElementById("modalFinish");
+
+  if (modal.classList.contains("hidden")) {
+    modal.classList.add("visible");
+    modal.classList.remove("hidden");
+  } else {
+    modal.classList.add("hidden");
+    modal.classList.remove("visible");
+  }
+
 }
 
 function loadCart(mock_info) {
@@ -64,8 +92,8 @@ function loadCart(mock_info) {
             <div id="productCard" class="flex flexRow width100 contBetween borderDefault bgMedium transition">
                 <div id="prodInfo" class="flex flexColumn contBetween">
                     <div>
-                        <h2>R$ ${price}</h2>
-                        <h3>${name}</h3>
+                        <h2>${name}</h2>
+                        <h3>R$ ${price}</h3>
                     </div>
                     <div id="prodQuantity" class="flex flexRow width100">
                         <p>Quantidade: </p>
@@ -94,6 +122,68 @@ function loadResume(mock_info) {
   let valuesCount = document.querySelector("#valuesCount");
   let totalValue = document.querySelector("#totalValue");
   let subTotal = document.querySelector("#subTotal")
+
+  while (valuesCount.firstChild) {
+    valuesCount.removeChild(valuesCount.firstChild);
+  }
+
+  while (subTotal.firstChild) {
+    subTotal.removeChild(subTotal.firstChild);
+  }
+
+  if (totalValue.lastChild) {
+    totalValue.removeChild(totalValue.lastChild);
+  }
+
+  mock_info.forEach(({ name, price, quantity }) => {
+    let resumeItemsHTML = `
+        <div class="flex flexRow width100 contBetween">
+            <p>${name} x ${quantity}</p>
+            <p>${price * quantity}</p>
+        </div>
+        `;
+    let tempDiv = document.createElement("div");
+    tempDiv.innerHTML = resumeItemsHTML.trim();
+    let resumeItemsElement = tempDiv.firstChild;
+
+    valuesCount.appendChild(resumeItemsElement);
+
+    totalPrice += price * quantity;
+  });
+
+  let totalPriceHTML = `
+        <h3>R$ ${totalPrice.toFixed(2)}</h3>
+    `;
+
+  let tempH3 = document.createElement("h3");
+  tempH3.innerHTML = totalPriceHTML.trim();
+  let totalPriceElement = tempH3.firstChild;
+
+  totalValue.appendChild(totalPriceElement);
+
+  let qtdTotal = mock_info.length;
+  let qtdTotalText = "";
+
+  if (qtdTotal < 1) {
+    qtdTotalText = `<div class="flex width100"><p>Você não possui nenhum item no carrinho!</p></div>`;
+  } else if (qtdTotal === 1) {
+    qtdTotalText = `<div class="flex width100"><p>Subtotal (${qtdTotal} item)</p></div>`;
+  } else {
+    qtdTotalText = `<div class="flex width100"><p>Subtotal (${qtdTotal} itens)</p></div>`;
+  }
+
+  let tempDiv = document.createElement("div");
+  tempDiv.innerHTML = qtdTotalText.trim();
+  let qtdTotalTextElement = tempDiv.firstChild;
+
+  subTotal.appendChild(qtdTotalTextElement);
+}
+
+function loadModalResume(mock_info) {
+  let totalPrice = 0;
+  let valuesCount = document.querySelector("#valuesCountModal");
+  let totalValue = document.querySelector("#totalValueModal");
+  let subTotal = document.querySelector("#subTotalModal")
 
   while (valuesCount.firstChild) {
     valuesCount.removeChild(valuesCount.firstChild);

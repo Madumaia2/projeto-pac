@@ -50,6 +50,7 @@
         <h5 id="cartTitle">Carrinho de compras</h5>
         <section id="cartInfo" class="flex flexRow width100 height100 contBetween">
             <div id="cartProducts" class="width100 flex flexColumn">
+                <button id="openModalPurchase" onclick="openModal()" class="borderDefault bgPrimary btnPressed transition mtop5 ">Informações da Compra</button>
                 <div id="searchBody">
                     <h6>Pesquisar</h6>
                     <div id="searchBar">
@@ -86,7 +87,7 @@
                         </div>
                         <p>Você pode parcelar em até 10x sem juros no cartão da aura.store!</p>
                     </div>
-                    <button id="finishPurchase" class="borderDefault bgPrimary btnPressed transition">Finalizar Compra</button>
+                    <button id="finishPurchase" onclick="openModalFinish()" class="borderDefault bgPrimary btnPressed transition">Finalizar Compra</button>
                     <a id="keepPurchasing" href="../home.html">
                         Continuar Comprando
                     </a>
@@ -94,5 +95,43 @@
             </div>
         </section>
     </main>
+    <div id="modalResume" class="hidden padding10">
+        <div id="purchaseInfoModal" class="width100 flex flexColumn">
+            <button onclick="openModal()" class="borderDefault bgPrimary btnPressed transition">
+                Voltar
+            </button>
+            <div id="finishBody" class="width100 height100 flex flexColumn contCenter borderDefault bgMedium">
+                <h1 id="finishTitle">Resumo da Compra</h1>
+                <div>
+                    <h3>Cupom de Desconto</h3>
+                    <div id="searchBar">
+                        <input id="searchInput">
+                        <button id="buttonCoupon" class="borderDefault bgPrimary btnPressed transition">
+                            OK
+                        </button>
+                    </div>
+                </div>
+                <h3 id="subTotalModal"></h3>
+                <div id="valuesCountModal">
+                </div>
+                <div>
+                    <div id="totalValueModal" class="flex flexRow width100 contBetween">
+                        <h3>Valor Total</h3>
+                    </div>
+                    <p>Você pode parcelar em até 10x sem juros no cartão da aura.store!</p>
+                </div>
+                <button id="finishPurchase" onclick="openModalFinish()" class="borderDefault bgPrimary btnPressed transition">Ir para o Pagamento</button>
+                <a id="keepPurchasing" href="../home.html">
+                    Continuar Comprando
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="modalFinish" class="hidden padding10" onclick="openModalFinish()">
+        <div class="bgLight height100 width100 padding10 alignCenter contCenter flex flexColumn">
+            <h2>Escaneie o código para realizar o pagamento</h2>
+            <img class="mtop5" src="../icon/QrCode.PNG">
+        </div>
+    </div>
 </body>
 </html>
