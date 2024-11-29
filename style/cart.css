@@ -1,9 +1,77 @@
 @import url(./style.css);
 /* Tela de carrinho */
 
+.flex {
+    display: flex;
+}
+
+.flexColumn {
+    flex-direction: column;
+}
+
+.flexRow {
+    flex-direction: row;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.height100 {
+    height: 100%;
+}
+
+.contCenter {
+    justify-content: center;
+}
+
+.contBetween {
+    justify-content: space-between;
+}
+
+.alignCenter {
+    align-items: center;
+}
+
+.borderDefault {
+    border: 2px solid var(--border);
+    border-radius: 2dvh;
+}
+
+.bgBorder {
+    background-color: var(--border);
+}
+
+.bgMedium {
+    background-color: var(--medium);
+}
+.bgLight{
+    background-color: var(--light);
+}
+
+.bgPrimary {
+    background-color: var(--primary-color);
+}
+
+.btnPressed:active {
+    background-color: var(--primary-color-dark);
+    color: var(--light);
+}
+
+.transition {
+    transition: all ease-in-out .1s;
+}
+
+.mtop5{
+    margin-top: 5%;
+}
+
+.padding10{
+    padding: 10%;
+}
+
 #cartMain {
     height: 90dvh;
-    flex-direction: column;
     padding: 8dvh 5dvw;
 }
 
@@ -12,72 +80,41 @@
 }
 
 #cartInfo {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     gap: 3dvw;
 }
 
-#cartProducts, #purchaseInfo, #finishBody {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-#finishBody {
-    justify-content: center;
-}
-
 #prodInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     width: 40%;
 }
 
 #productsBody {
-    display: flex;
-    flex-direction: column;
     width: 50dvw;
-    height: 100%;
     overflow-y: scroll;
     gap: 2dvh;
     margin-top: 2dvh;
 }
 
-#productCard, #prodImg, #finishBody, #prodQtdInput, #buttonCoupon, #finishPurchase {
-    border: 2px solid var(--border);
-    border-radius: 2dvh;
-}
-
 #productCard {
-    background-color: var(--medium);
-    padding: 2%;
-    width: 100%;
-    justify-content: space-between;
-    height: 25dvh;
+    padding: 3%;
+    width: 90%;
+    height: 30dvh;
 }
 
-#productCard, #buttonCoupon, #finishPurchase{
-    transition: all ease-in-out .1s;
+#productCard button {
+    height: fit-content;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 1dvi;
 }
 
 /* animação temporária */
-#productCard svg:active {
+#productCard button:active {
     margin-top: 1dvh;
-    background-color: red;
 }   
 
-#productCard svg:hover {
+#productCard button:hover {
     background-color: red;
-}
-
-#productCard, #prodQuantity, #valueRow {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
 }
 
 #prodQuantity {
@@ -91,19 +128,14 @@
 }
 
 #prodQtdInput{
-    background-color: var(--border);
-    height: 100%;
-    width: 100%;
     text-align: right;
     border: none;
     outline: none !important;
 }
 
 #prodImg {
-    height: 100%;
-    object-fit: cover;
     max-width: 40%;
-    aspect-ratio: 4/3;
+    object-fit: fill;
 }
 
 #valuesCount {
@@ -111,29 +143,12 @@
 }
 
 #finishBody {
-    background-color: var(--medium);
-    border: 2px solid var(--border);
     margin-top: 5dvh;
-    height: 100%;
-}
-
-#valueRow {
-    justify-content: space-between;
 }
 
 #finishBody > * {
     margin: 1dvh 2dvw;
 }
-
-#buttonCoupon, #finishPurchase {
-    background-color: var(--primary-color);
-}
-
-#buttonCoupon:active, #finishPurchase:active {
-    background-color: var(--primary-color-dark);
-    color: var(--light);
-}
-
 
 #finishTitle {
     padding-bottom: 1dvh;
@@ -146,4 +161,48 @@
 
 #keepPurchasing {
     color: var(--dark);
+}
+
+#modalResume, #modalFinish {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden{
+    display: none!important;
+}
+
+.visible{
+    display: block!important;
+}
+
+#openModalPurchase{
+    display: none;
+}
+
+/* Quando for mobile */
+@media (max-width : 600px) {
+    #purchaseInfo {
+        display: none;
+    }
+
+    #purchaseInfoModal {
+        height: 100%;
+    }
+
+    #productsBody{
+        width: 90dvw;
+    }
+
+    #openModalPurchase{
+        display: block;
+    }
 }
